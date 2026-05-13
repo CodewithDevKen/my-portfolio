@@ -1,0 +1,19 @@
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.text p {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.85;
+  font-weight: 300;
+  transition: var(--transition);
+}
+
+.text strong {
+  color: var(--text);
+  font-weight: 600;
+}

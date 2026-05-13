@@ -1,0 +1,104 @@
+.intro {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 24px;
+  max-width: 480px;
+  transition: var(--transition);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  border-color: var(--border-2);
+  transform: translateX(4px);
+}
+
+.linkLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.linkIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--tag);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.link:hover .linkIcon {
+  border-color: var(--border-2);
+}
+
+.linkInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.linkLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.linkValue {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  transition: var(--transition);
+}
+
+.arrow {
+  font-size: 14px;
+  color: var(--text-3);
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.link:hover .arrow {
+  transform: translate(2px, -2px);
+  color: var(--text-2);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .link {
+    padding: 12px 14px;
+  }
+
+  .linkIcon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}

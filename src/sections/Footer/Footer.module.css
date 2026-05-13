@@ -1,0 +1,16 @@
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  transition: var(--transition);
+}
+
+.heart {
+  color: var(--red);
+}
