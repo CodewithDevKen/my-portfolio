@@ -168,6 +168,7 @@ export const certificates = [
     issuer: "Anthropic",
     date: "May 9, 2026",
     icon: "🤖",
+    credentialUrl: "/certificates/claude-101.pdf",
   },
   {
     id: 3,
@@ -175,6 +176,7 @@ export const certificates = [
     issuer: "Anthropic",
     date: "May 9, 2026",
     icon: "🤖",
+    credentialUrl: "/certificates/claude-code-101.pdf",
   },
   {
     id: 4,
@@ -182,6 +184,7 @@ export const certificates = [
     issuer: "Anthropic",
     date: "May 2026",
     icon: "🤖",
+    credentialUrl: "/certificates/ai-fluency.pdf",
   },
   {
     id: 5,
@@ -189,12 +192,14 @@ export const certificates = [
     issuer: "Anthropic",
     date: "May 2026",
     icon: "🤖",
+    credentialUrl: "/certificates/claude-code-in-action.pdf",
   },
   {
     id: 6,
     name: "Observability with Grafana, Prometheus, Loki, Alloy and Tempo",
     issuer: "Udemy",
-    date: "May 2026",
+    date: "May 19, 2026",
     icon: "📊",
+    credentialUrl: "https://ude.my/UC-46e6415c-2f3c-4b03-b886-337e63413029",
   },
 ];
