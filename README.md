@@ -1,16 +1,49 @@
-# React + Vite
+# my-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built from scratch with React and Vite. No templates — every section written by hand.
 
-Currently, two official plugins are available:
+**Live site:** https://my-portfolio-zeta-six-16.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Sections
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Hero** — intro, role, and call to action
+- **About** — background and current focus
+- **Experience** — work history (Zerohash, Avior Marine, Asterisko)
+- **Stack** — tech grouped by category with learning indicators
+- **Projects** — featured work including an iOS POS system in development
+- **Certifications** — FIX Protocol, Claude 101, Claude Code 101
+- **Contact** — reach out form / links
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Tools |
+|-------|-------|
+| Framework | React 19 |
+| Build tool | Vite 8 |
+| Styling | CSS Modules, CSS custom properties |
+| Linting | ESLint |
+| Deployment | Vercel |
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+
+## Deployment
+
+Deployed automatically on Vercel on every push to `main`.
