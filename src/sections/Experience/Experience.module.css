@@ -111,6 +111,30 @@
   color: var(--text-3);
 }
 
+.bullets {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bullets li {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.bullets li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .top {
@@ -120,5 +144,9 @@
 
   .period {
     font-size: 10px;
+  }
+
+  .bullets li {
+    font-size: 12px;
   }
 }

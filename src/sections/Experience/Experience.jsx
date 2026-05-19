@@ -21,6 +21,13 @@ function Experience() {
                 <span className={`${styles.badge} ${styles[item.badge]}`}>
                   {item.badgeLabel}
                 </span>
+                {item.bullets && (
+                  <ul className={styles.bullets}>
+                    {item.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           ))}

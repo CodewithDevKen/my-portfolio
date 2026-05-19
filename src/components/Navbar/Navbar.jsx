@@ -1,10 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import useTheme from "../../hooks/useTheme";
+
+const NAV_LINKS = [
+  { href: "about", label: "About" },
+  { href: "experience", label: "Experience" },
+  { href: "stack", label: "Stack" },
+  { href: "certifications", label: "Certs" },
+  { href: "projects", label: "Projects" },
+  { href: "contact", label: "Contact" },
+];
 
 function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-30% 0px -60% 0px" }
+    );
+    sections.forEach((s) => obs.observe(s));
+    return () => obs.disconnect();
+  }, []);
 
   function toggleMenu() {
     setMenuOpen((prev) => !prev);
@@ -23,29 +47,19 @@ function Navbar() {
           </a>
 
           <div className={styles.right}>
-            {/* Desktop links — hidden on mobile */}
             <ul className={styles.links}>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#experience">Experience</a>
-              </li>
-              <li>
-                <a href="#stack">Stack</a>
-              </li>
-              <li>
-                <a href="#certifications">Certs</a>
-              </li>
-              <li>
-                <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
+              {NAV_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <a
+                    href={`#${href}`}
+                    className={activeSection === href ? styles.active : ""}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
 
-            {/* Theme toggle */}
             <button
               className={styles.toggle}
               onClick={toggleTheme}
@@ -57,61 +71,28 @@ function Navbar() {
               </span>
             </button>
 
-            {/* Hamburger — visible on mobile only */}
             <button
               className={styles.hamburger}
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              <span
-                className={`${styles.bar} ${menuOpen ? styles.barTopOpen : ""}`}
-              />
-              <span
-                className={`${styles.bar} ${menuOpen ? styles.barMidOpen : ""}`}
-              />
-              <span
-                className={`${styles.bar} ${menuOpen ? styles.barBotOpen : ""}`}
-              />
+              <span className={`${styles.bar} ${menuOpen ? styles.barTopOpen : ""}`} />
+              <span className={`${styles.bar} ${menuOpen ? styles.barMidOpen : ""}`} />
+              <span className={`${styles.bar} ${menuOpen ? styles.barBotOpen : ""}`} />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
-      <div
-        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
-      >
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
         <ul className={styles.mobileLinks}>
-          <li>
-            <a href="#about" onClick={closeMenu}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#experience" onClick={closeMenu}>
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#stack" onClick={closeMenu}>
-              Stack
-            </a>
-          </li>
-          <li>
-            <a href="#certifications" onClick={closeMenu}>
-              Certs
-            </a>
-          </li>
-          <li>
-            <a href="#projects" onClick={closeMenu}>
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={closeMenu}>
-              Contact
-            </a>
-          </li>
+          {NAV_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <a href={`#${href}`} onClick={closeMenu}>
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </>

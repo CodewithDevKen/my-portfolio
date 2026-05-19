@@ -57,6 +57,13 @@ function Hero() {
           >
             🐙 GitHub
           </a>
+          <a
+            href="/Mendoza_Kenji_CV.pdf"
+            download
+            className={styles.btnSecondary}
+          >
+            📄 Download CV
+          </a>
         </div>
       </div>
     </section>

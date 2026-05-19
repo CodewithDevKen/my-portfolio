@@ -19,7 +19,9 @@ function Stack() {
                     className={`${styles.tag} ${tag.learning ? styles.learning : ""}`}
                   >
                     {tag.name}
-                    {tag.learning ? " ↗" : ""}
+                    {tag.learning && (
+                      <span className={styles.learningBadge}>learning</span>
+                    )}
                   </span>
                 ))}
               </div>

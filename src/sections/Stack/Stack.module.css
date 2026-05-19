@@ -38,6 +38,9 @@
 }
 
 .learning {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--red-dim);
   border-color: rgba(229, 56, 59, 0.2);
   color: var(--red);
@@ -45,4 +48,12 @@
 
 .learning:hover {
   border-color: rgba(229, 56, 59, 0.4);
+}
+
+.learningBadge {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.75;
 }

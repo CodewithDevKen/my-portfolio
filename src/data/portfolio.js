@@ -1,10 +1,10 @@
 export const personalInfo = {
   name: "Kenji Mendoza",
-  role: "Technical Support Engineer & iOS Developer",
+  role: "Technical Support Engineer & Software Developer",
   degree: "BS Computer Engineering, Cum Laude — PLM",
   location: "Santa Cruz, Manila, Philippines",
   email: "codewithkendev@gmail.com",
-  github: "https://github.com/CodeWithDevKen",
+  github: "https://github.com/CodewithDevKen",
   linkedin: "https://www.linkedin.com/in/kenji-mendoza-094b792a4/",
   phone: "0956-716-5469",
   available: true,
@@ -17,6 +17,12 @@ export const aboutText = [
   "Outside of work I continuously sharpen my development skills — building full stack web apps, React Native mobile apps, and currently learning Swift and SwiftUI to build a real iOS POS system. I am always growing, always building.",
 ];
 
+export const aboutStats = [
+  { value: "4+", label: "Years building" },
+  { value: "Cum Laude", label: "BSCpE — PLM" },
+  { value: "Zerohash", label: "Current company" },
+];
+
 export const experience = [
   {
     id: 1,
@@ -26,6 +32,10 @@ export const experience = [
     icon: "⚡",
     badge: "current",
     badgeLabel: "🟢 Current",
+    bullets: [
+      "Debug API integrations and resolve complex technical issues for crypto infrastructure clients",
+      "Act as technical liaison between engineering teams and end users across global markets",
+    ],
   },
   {
     id: 2,
@@ -35,6 +45,10 @@ export const experience = [
     icon: "🔧",
     badge: "done",
     badgeLabel: "✓ Completed",
+    bullets: [
+      "Handled Tier 1 and Tier 2 support tickets, escalating complex cases to engineering",
+      "Documented recurring issues and built internal knowledge base articles",
+    ],
   },
   {
     id: 3,
@@ -44,6 +58,10 @@ export const experience = [
     icon: "💻",
     badge: "done",
     badgeLabel: "✓ Completed",
+    bullets: [
+      "Built the company's manning agency website using React.js and SASS",
+      "Implemented job listings, services, and a contact system for streamlined user experience",
+    ],
   },
   {
     id: 4,
@@ -53,6 +71,22 @@ export const experience = [
     icon: "🎧",
     badge: "done",
     badgeLabel: "✓ Completed",
+    bullets: [
+      "Provided technical support and troubleshooting for client systems and software",
+    ],
+  },
+  {
+    id: 5,
+    title: "Full Stack Developer",
+    company: "Freelance",
+    period: "Jan 2022 – Present",
+    icon: "🚀",
+    badge: "ongoing",
+    badgeLabel: "⚡ Ongoing",
+    bullets: [
+      "Build full-stack web apps and React Native mobile apps for clients",
+      "Delivered real-time IoT integrations using Firebase and Arduino",
+    ],
   },
 ];
 
@@ -74,6 +108,7 @@ export const techStack = [
     label: "Frontend",
     tags: [
       { name: "React", learning: false },
+      { name: "TypeScript", learning: false },
       { name: "JavaScript", learning: false },
       { name: "HTML5", learning: false },
       { name: "CSS3 / SASS", learning: false },
@@ -127,7 +162,7 @@ export const projects = [
     tags: ["Swift", "SwiftUI", "SwiftData", "CoreBluetooth"],
     status: "wip",
     statusLabel: "In Development",
-    link: "#",
+    link: null,
   },
   {
     id: 2,
@@ -139,7 +174,43 @@ export const projects = [
     tags: ["React", "Vite", "CSS Modules"],
     status: "live",
     statusLabel: "Live",
-    link: "#",
+    link: "https://my-portfolio-zeta-six-16.vercel.app",
+  },
+  {
+    id: 3,
+    name: "Manning Agency Website",
+    description:
+      "Corporate website for Avior Marine Inc featuring home, about, job listings, services, and a contact system — designed to streamline crew recruitment.",
+    icon: "⚓",
+    iconBg: "blue",
+    tags: ["React", "SASS", "JavaScript"],
+    status: "live",
+    statusLabel: "Live",
+    link: null,
+  },
+  {
+    id: 4,
+    name: "Smart Parking App",
+    description:
+      "Mobile app with real-time Firebase integration and Arduino sensor hardware for live parking space availability and management.",
+    icon: "🅿️",
+    iconBg: "green",
+    tags: ["React Native", "Firebase", "Arduino IDE"],
+    status: "done",
+    statusLabel: "Completed",
+    link: null,
+  },
+  {
+    id: 5,
+    name: "iAqua",
+    description:
+      "Real-time aquarium monitoring app with scheduled feeding, automatic water change management, chatbot interaction, and full sensor history logs.",
+    icon: "🐠",
+    iconBg: "blue",
+    tags: ["React Native", "Firebase", "Arduino IDE"],
+    status: "done",
+    statusLabel: "Completed",
+    link: null,
   },
 ];
 

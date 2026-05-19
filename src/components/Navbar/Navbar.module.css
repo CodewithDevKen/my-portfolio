@@ -57,6 +57,11 @@
   color: var(--text);
 }
 
+.links a.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* ── THEME TOGGLE ── */
 .toggle {
   display: flex;
