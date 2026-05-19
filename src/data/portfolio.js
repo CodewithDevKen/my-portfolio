@@ -176,4 +176,25 @@ export const certificates = [
     date: "May 9, 2026",
     icon: "🤖",
   },
+  {
+    id: 4,
+    name: "AI Fluency: Framework & Foundation",
+    issuer: "Anthropic",
+    date: "May 2026",
+    icon: "🤖",
+  },
+  {
+    id: 5,
+    name: "Claude Code in Action",
+    issuer: "Anthropic",
+    date: "May 2026",
+    icon: "🤖",
+  },
+  {
+    id: 6,
+    name: "Observability with Grafana, Prometheus, Loki, Alloy and Tempo",
+    issuer: "Udemy",
+    date: "May 2026",
+    icon: "📊",
+  },
 ];
