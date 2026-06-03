@@ -1,6 +1,5 @@
 {
   "buildCommand": "next build",
   "devCommand": "next dev --port 3001",
-  "installCommand": "npm install",
-  "outputDirectory": ".next"
+  "installCommand": "npm install"
 }
