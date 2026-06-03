@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─ Design tokens ─ */
+:root {
+  /* Dark (default) */
+  --bg:          #0B0C12;
+  --surface:     #141720;
+  --surface2:    #1B1F2C;
+  --now-panel:   #0D1626;
+  --cream:       #E2DCD0;
+  --muted:       #8A8680;
+  --dim:         #3A3835;
+  --amber:       #C8903A;
+  --amber-dim:   #8A6422;
+  --steel:       #6892B8;
+  --steel-light: #A4C0D8;
+  --sage:        #4E9660;
+  --line:        rgba(200, 175, 120, 0.12);
+  --line-strong: rgba(200, 175, 120, 0.22);
+  --line-dark:   rgba(200, 175, 120, 0.08);
+
+  /* Semantic */
+  --spotlight:       rgba(200, 144, 58, 0.10);
+  --caption-bg:      rgba(11,  12,  18,  0.92);
+  --tag-bg:          rgba(200, 175, 120, 0.06);
+  --tag-border:      rgba(200, 175, 120, 0.12);
+  --badge-amber-bg:  rgba(200, 144, 58,  0.14);
+  --gauge-track:     rgba(200, 175, 120, 0.12);
+  --gauge-tick:      rgba(200, 175, 120, 0.30);
+  --card-image-bg:   #1B1F2C;
+  --card-stripe:     rgba(200, 175, 120, 0.06);
+  --now-divider:     rgba(200, 175, 120, 0.12);
+  --now-row:         rgba(200, 175, 120, 0.10);
+  --btn-primary-bg:  #E2DCD0;
+  --btn-primary-fg:  #0B0C12;
+  --btn-secondary-border: rgba(226, 220, 208, 0.30);
+  --btn-secondary-hover:  rgba(226, 220, 208, 0.60);
+}
+
+[data-theme="light"] {
+  --bg:          #F2EDE2;
+  --surface:     #FFFFFF;
+  --surface2:    #E8E1D0;
+  --now-panel:   #1A1C2A;
+  --cream:       #1C1916;
+  --muted:       #5A5650;
+  --dim:         #C0B8AC;
+  --amber:       #9A5E18;
+  --amber-dim:   #7A4A10;
+  --steel:       #3A6898;
+  --steel-light: #A4C0D8;
+  --sage:        #2D7042;
+  --line:        rgba(30, 20, 10, 0.10);
+  --line-strong: rgba(30, 20, 10, 0.18);
+  --line-dark:   rgba(30, 20, 10, 0.06);
+
+  /* Semantic */
+  --spotlight:       rgba(154, 94, 24, 0.08);
+  --caption-bg:      rgba(20,  15,  5,   0.88);
+  --tag-bg:          rgba(30,  20,  10,  0.04);
+  --tag-border:      rgba(30,  20,  10,  0.10);
+  --badge-amber-bg:  rgba(154, 94,  24,  0.12);
+  --gauge-track:     rgba(30,  20,  10,  0.10);
+  --gauge-tick:      rgba(30,  20,  10,  0.22);
+  --card-image-bg:   #E8E1D0;
+  --card-stripe:     rgba(30, 20, 10, 0.04);
+  --now-divider:     rgba(200, 175, 120, 0.14);
+  --now-row:         rgba(200, 175, 120, 0.10);
+  --btn-primary-bg:  #1C1916;
+  --btn-primary-fg:  #F2EDE2;
+  --btn-secondary-border: rgba(28, 25, 22, 0.28);
+  --btn-secondary-hover:  rgba(28, 25, 22, 0.55);
+}
+
+/* ─ Theme transition ─ */
+body, nav, section, footer, div, span, p, h1, h2, h3, h4, a, svg {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─ CTA buttons ─ */
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  padding: 15px 28px;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cream);
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  padding: 15px 28px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--btn-secondary-border);
+  transition: border-color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--btn-secondary-hover); }
+
+/* ─ Section border ─ */
+.section-border-bottom {
+  border-bottom: 2px solid var(--cream);
+  padding-bottom: 16px;
+}
+
+/* ─ Marquee ─ */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* ─ Pulse dot ─ */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78, 150, 96, 0.5); }
+  50%       { opacity: 0.75; box-shadow: 0 0 0 4px rgba(78, 150, 96, 0); }
+}
+.pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* ─ Reveal entrance ─ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ─ Card hover ─ */
+.work-card {
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ─ Image zoom ─ */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.work-card:hover .img-zoom {
+  transform: scale(1.05);
+}
+
+/* ─ Card overlay ─ */
+.card-overlay {
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.work-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* ─ Dotted leader ─ */
+.dotted-leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--line-strong);
+  margin: 0 12px;
+  transform: translateY(-4px);
+}
+
+/* ─ Line color helpers ─ */
+.border-line     { border-color: var(--line); }
+.border-line-s   { border-color: var(--line-strong); }
+
+/* ─ Electric spark on timeline connector ─ */
+@keyframes electric-spark {
+  0%   { left: -25%; opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+.electric-line {
+  position: relative;
+  overflow: hidden;
+}
+.electric-spark {
+  position: absolute;
+  top: -1px;
+  left: -25%;
+  width: 25%;
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(to right, transparent, rgba(200,144,58,0.5), #FFD580, rgba(200,144,58,0.5), transparent);
+  animation: electric-spark 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .electric-spark { animation: none; opacity: 0; }
+}
